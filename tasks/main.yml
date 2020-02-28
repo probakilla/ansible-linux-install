@@ -1,0 +1,12 @@
+- name: Linux post installation
+  hosts: localhost
+  connection: local
+  tasks:
+
+      - name: Install programs
+        apt:
+            pkg:
+            - vim
+            - zsh
+
+      - debug: var=output.stdout_lines
