@@ -2,11 +2,31 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: Install programs
+      become: true
+      apt:
+        pkg:
+        - vim-nox
+        - zsh
+        - git
 
-      - name: Install programs
-        apt:
-            pkg:
-            - vim
-            - zsh
+    - name: Change root shell
+      user:
+        name: root
+        shell: /usr/bin/zsh
+      become: true
 
-      - debug: var=output.stdout_lines
+    - name: Change user shell
+      user:
+        name: "{{ ansible_user }}"
+        shell: /usr/bin/zsh
+      become: true
+
+    - name: Install Oh My zsh
+      shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      ignore_errors: true
+
+    - name: Install Oh My Zsh for root
+      shell: sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+      become: true
+      ignore_errors: true

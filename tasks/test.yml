@@ -1,0 +1,11 @@
+- name: Test Ansible playbook
+  hosts: localhost
+  connection: local
+  tasks:
+
+      - name: Tests logname
+        command: logname
+        register: logname
+        
+      - name: Print previous command
+        debug: var=logname.stdout
