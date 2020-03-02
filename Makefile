@@ -22,4 +22,4 @@ test:
 	ansible-playbook tasks/test.yml
 
 ansible:
-	ansible-playbook tasks/main.yml
+	ansible-playbook tasks/main.yml -k -K
