@@ -1,0 +1,54 @@
+---
+
+- name: Changing the default theme
+  become: "{{ is_root }}"
+  lineinfile:
+    path: "{{ file_path }}"
+    regexp: '^ZSH\_THEME=.*'
+    line: ZSH_THEME="gentoo"
+
+- name: Changing the default plugins
+  become: "{{ is_root }}"
+  blockinfile:
+    path: "{{ file_path }}"
+    marker: "plugins=(git)"
+    block: |
+      plugins=(
+          git
+          zsh-syntax-highlighting
+          zsh-autosuggestions
+          colored-man-pages
+          colorize
+          command-not-found
+          copydir
+          cp
+          vi-mode
+          gitignore
+          pip
+          virtualenv
+          lol
+          extract
+          vundle
+          history
+      )
+
+- name: Remove old plugins
+  become: "{{ is_root }}"
+  lineinfile:
+    path: "{{ file_path }}"
+    regexp: '^plugins=\(git\)$'
+    state: absent
+
+- name: Sourcing alias file
+  blockinfile:
+    path: "{{ file_path }}"
+    insertafter: "^export ZSH.*"
+    block: |
+      source $HOME/.aliases
+
+- name: Copy alias file
+  copy:
+    src: files/.aliases
+    dest: $HOME/.aliases
+    owner: "{{ ansible_user }}"
+    mode: 0644

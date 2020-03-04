@@ -1,0 +1,6 @@
+- name: Test Ansible playbook
+  hosts: localhost
+  connection: local
+  tasks:
+    - include: tasks/test.yml filename=test.txt
+    - include: tasks/test.yml filename=test1.txt

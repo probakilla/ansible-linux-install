@@ -19,7 +19,7 @@ clean:
 	docker image rm --force $(IMG_TAG)
 
 test:
-	ansible-playbook tasks/test.yml
+	ansible-playbook ansible/test.yml
 
 ansible:
-	ansible-playbook tasks/main.yml -k -K
+	ansible-playbook ansible/main.yml -k -K
