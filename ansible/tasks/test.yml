@@ -1,8 +1,0 @@
----
-
-- name: Create File
-  file:
-    path: /home/julien/projects/ansible_linux/{{ filename }}
-    state: touch
-    owner: julien
-    mode: 0600

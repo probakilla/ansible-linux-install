@@ -1,7 +1,0 @@
-# Custom Aliases
-
-alias src="source ~/.zshrc"
-alias python="python3.7"
-alias pip="pip3"
-alias zshcfg="vim $HOME/.zshrc"
-alias vimcfg='vim /etc/vim/vimrc'

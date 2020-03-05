@@ -1,0 +1,13 @@
+---
+
+- name: Install zshrc template file
+  template:
+    src: zshrc.j2
+    dest: "{{ file_path }}"
+    follow: yes
+
+- name: Install alias file
+  template:
+    src: aliases.j2
+    dest: "{{ alias_path }}"
+    follow: yes

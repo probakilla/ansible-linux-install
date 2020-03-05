@@ -21,5 +21,5 @@ clean:
 test:
 	ansible-playbook ansible/test.yml
 
-ansible:
-	ansible-playbook ansible/main.yml -k -K
+install:
+	ansible-playbook ansible/main.yml -K

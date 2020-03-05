@@ -1,11 +1,14 @@
 - name: Linux post installation
   hosts: localhost
   connection: local
-  tasks:
-
-    - include: tasks/install_soft.yml
-    - include: tasks/change_to_zsh.yml user={{ ansible_user }}
-    - include: tasks/change_to_zsh.yml user=root
-    - include: tasks/install_ohmyzsh.yml is_root=false user={{ ansible_user }}
-    - include: tasks/update_zshrc.yml file_path=/home/docker/.zshrc is_root=false
-    - include: tasks/install_ohmyzsh_plugins.yml
+  roles:
+    - apt_install
+    - default_shell
+    - role: default_shell
+      user: root
+    - ohmyzsh_install
+    - zshrc_config
+    - ohmyzsh_plugins_install
+    - vundle_install
+    - vimrc_config
+    - home_bin_install
