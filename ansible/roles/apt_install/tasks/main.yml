@@ -1,9 +1,0 @@
----
-
-- name: Install programs
-  become: true
-  apt:
-    pkg:
-      - vim-nox
-      - zsh
-      - git

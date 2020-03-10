@@ -1,5 +1,0 @@
----
-
-- name: Installtion of Vundle
-  shell: git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  ignore_errors: true

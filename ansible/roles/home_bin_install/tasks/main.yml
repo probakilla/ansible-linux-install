@@ -1,5 +1,0 @@
----
-
-- name: Installing custom home bin repository
-  shell: git clone https://github.com/probakilla/bin.git $HOME/bin
-  ignore_errors: true

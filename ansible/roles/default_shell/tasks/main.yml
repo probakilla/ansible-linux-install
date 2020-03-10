@@ -1,7 +1,0 @@
----
-
-- name: Change default shell to ZSH
-  user:
-    name: "{{ user }}"
-    shell: /usr/bin/zsh
-  become: true

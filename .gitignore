@@ -1,2 +1,6 @@
+# Temporary files
 *.retry
 [._].sw[apo]
+
+# ansible directory
+ansible/
