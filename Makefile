@@ -11,7 +11,7 @@ DEPS = probakilla.apt_install
 
 IMG_TAG = $(IMAGE_TAG)
 
-all: install
+all: install-deps install
 
 rebuild: clean build run
 
