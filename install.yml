@@ -1,0 +1,9 @@
+- hosts: localhost
+  roles:
+    - probakilla.apt_install
+    - probakilla.change_shell
+    - role: probakilla.zshrc_config
+      override_aliases: true
+      override_zshrc: true
+    - role: probakilla.vimrc_config
+      override_vimrc: true

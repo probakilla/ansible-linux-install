@@ -9,13 +9,9 @@ GALAXY = ansible-galaxy
 ANS_ARGS = -k -K
 DEPS = probakilla.apt_install
 
-# files
-MAIN = ansible/main.yml
-TEST = ansible/test.yml
-
 IMG_TAG = $(IMAGE_TAG)
 
-all: install_dependencies install
+all: install
 
 rebuild: clean build run
 
@@ -28,11 +24,11 @@ run:
 clean:
 	docker image rm --force $(IMG_TAG)
 
-install_dependencies:
-	$(GALAXY) install $(DEPS)
+install-deps:
+	$(GALAXY) install -r requirements.yml
 
-install: $(MAIN)
-	$(ANSIBLE) $(ANS_ARGS) $^
+install:
+	$(ANSIBLE) install.yml -k -K
 
-test: $(TEST)
-	$(ANSIBLE) $^
+update:
+	$(ANSIBLE) update.yml -k -K
