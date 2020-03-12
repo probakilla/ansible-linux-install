@@ -1,6 +1,5 @@
 - hosts: localhost
 - roles:
-  - probakilla.apt_install
   - probakilla.change_shell
   - probakilla.zshrc_config
   - probakilla.vimrc_config
