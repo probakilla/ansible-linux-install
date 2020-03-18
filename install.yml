@@ -6,3 +6,5 @@
       override_zshrc: true
     - role: probakilla.vimrc_config
       override_vimrc: true
+    - role: probakilla.tmux_config
+      override_tmux_config: true

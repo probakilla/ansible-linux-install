@@ -2,3 +2,4 @@
 - src: probakilla.change_shell
 - src: probakilla.vimrc_config
 - src: probakilla.zshrc_config
+- src: probakilla.tmux_config
