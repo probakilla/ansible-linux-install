@@ -27,7 +27,7 @@ install-deps:
 	$(GALAXY) install -r requirements.yml
 
 install:
-	$(ANSIBLE) install.yml -k -K
+	$(ANSIBLE) install.yml -kK
 
 update:
-	$(ANSIBLE) update.yml -k -K
+	$(ANSIBLE) update.yml -kK
