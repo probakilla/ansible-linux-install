@@ -6,8 +6,7 @@ export $(shell sed 's/=.*//' .env)
 # Ansible
 ANSIBLE = ansible-playbook
 GALAXY = ansible-galaxy
-ANS_ARGS = -k -K
-DEPS = probakilla.apt_install
+ANS_ARGS = -kK
 
 IMG_TAG = $(IMAGE_TAG)
 

@@ -1,7 +1,7 @@
 FROM debian:latest
 
 RUN apt-get update && \
-    apt-get install -y sudo ansible nano build-essential curl && \
+    apt-get install -y sudo ansible nano build-essential curl vim && \
     echo "root:docker" | chpasswd && \
     useradd -rm -d /home/docker -s /bin/bash \
         -p "$(openssl passwd docker)" docker && \

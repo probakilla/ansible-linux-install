@@ -1,4 +1,1 @@
-- src: probakilla.apt_install
-- src: probakilla.change_shell
-- src: probakilla.vimrc_config
-- src: probakilla.zshrc_config
+- src: probakilla.linux_auto_config
